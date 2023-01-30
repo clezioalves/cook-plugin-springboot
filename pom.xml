@@ -142,8 +142,7 @@
 								</copy>
 								<echo>Compactando pacote de artefatos</echo>
 								<zip destfile="${project.basedir}/springboot-recipe.zip"
-									basedir="${project.build.directory}/zip"
-									includes="**/templates/*,lib/*,*.jar,config.properties" />
+									basedir="${project.build.directory}/zip"/>
 							</tasks>
 						</configuration>
 					</execution>
