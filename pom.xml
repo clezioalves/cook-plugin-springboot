@@ -125,11 +125,26 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<target>
-								<zip destfile="${project.basedir}/springboot/springboot-recipe.zip"
-									basedir="${project.build.directory}/classes"
-									includes="*.jar,**/templates/*,lib/*,config.properties" />
-							</target>
+							<tasks>
+								<echo>Copiando recursos para pacote de artefatos</echo>
+								<copy todir="${project.build.directory}/springboot">
+									<fileset dir="${project.build.directory}/classes">
+										<include name="**/templates/*" />
+										<include name="lib/*" />
+										<include name="config.properties" />
+									</fileset>
+								</copy>
+								<echo>Copiando executável para pacote de artefatos</echo>
+								<copy todir="${project.build.directory}/springboot/lib">
+									<fileset dir="${project.build.directory}/classes">
+										<include name="*.jar" />
+									</fileset>
+								</copy>
+								<echo>Compactando pacote de artefatos</echo>
+								<zip destfile="${project.basedir}/springboot-recipe.zip"
+									basedir="${project.build.directory}/springboot"
+									includes="**/templates/*,lib/*,*.jar,config.properties" />
+							</tasks>
 						</configuration>
 					</execution>
 				</executions>
