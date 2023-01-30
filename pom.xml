@@ -127,7 +127,7 @@
 						<configuration>
 							<tasks>
 								<echo>Copiando recursos para pacote de artefatos</echo>
-								<copy todir="${project.build.directory}/springboot">
+								<copy todir="${project.build.directory}/zip/springboot">
 									<fileset dir="${project.build.directory}/classes">
 										<include name="**/templates/*" />
 										<include name="lib/*" />
@@ -135,14 +135,14 @@
 									</fileset>
 								</copy>
 								<echo>Copiando executável para pacote de artefatos</echo>
-								<copy todir="${project.build.directory}/springboot/lib">
+								<copy todir="${project.build.directory}/zip/springboot/lib">
 									<fileset dir="${project.build.directory}/classes">
 										<include name="*.jar" />
 									</fileset>
 								</copy>
 								<echo>Compactando pacote de artefatos</echo>
 								<zip destfile="${project.basedir}/springboot-recipe.zip"
-									basedir="${project.build.directory}/springboot"
+									basedir="${project.build.directory}/zip"
 									includes="**/templates/*,lib/*,*.jar,config.properties" />
 							</tasks>
 						</configuration>
