@@ -126,7 +126,7 @@
 						</goals>
 						<configuration>
 							<target>
-								<zip destfile="${project.basedir}/springboot-recipe.zip"
+								<zip destfile="${project.basedir}/springboot/springboot-recipe.zip"
 									basedir="${project.build.directory}/classes"
 									includes="*.jar,**/templates/*,lib/*,config.properties" />
 							</target>
