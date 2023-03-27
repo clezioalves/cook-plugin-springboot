@@ -21,6 +21,6 @@ cook springboot model
 ```
 cook springboot repository
 ```
-cook springboot service e
+cook springboot service
 ```
 cook springboot controller.
